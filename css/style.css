@@ -21,7 +21,7 @@ body{
 #nav{
     background: #86b604;
 }
-#nav::after{
+#nav::after, main::after, .navigation li::after{
     content: '';
     clear: both;
     display: table;
@@ -118,4 +118,67 @@ input[type="checkbox"]:checked ~.navigation li:not(:first-child){
     border-radius: 5px;
     padding: .5rem 1rem;
     display: inline-block;
+}
+@media (min-width:576px){
+    #main #boxes{
+        grid-template-columns: 1fr 1fr;
+    }
+    #main>img{
+        float: right;
+        width: 30%;
+        margin-left: 10px;
+    }
+}
+@media (min-width:992px){
+    #main #boxes{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+    #main>img{
+        float: right;
+        width: 30%;
+        margin-left: 10px;
+    }
+    .navigation li:not(:first-child){
+        display: block;
+    }
+    .mobile-menu-button{
+        display: none;
+    }
+    .navigation li{
+        float: left;
+    }
+    #nav{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    #main h1{
+        margin-top: 4rem;
+    }
+}
+@media print{
+        #nav{
+            display: none;
+        }
+        #main{
+            margin-top: 0;
+        }
+        #main h1{
+            margin: 0;
+            font-size: 4rem;
+        }
+        #main>img{
+            display: none;
+        }
+        #boxes>.box>.box-content>a{
+            display: none;
+        }
+        #main h2{
+            padding: .5rem 0;
+            font-size: 3rem;
+        }
+        #main>p{
+            line-height: 1.2;
+        }
 }
