@@ -1,6 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 *{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     text-decoration: none;
+    list-style:none;
+}
+html{
+    font-size: 16px;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background: #ddd;
+}
+#container{
+    max-width: 1000px;
+    min-width: 300px;
+    width: 95%;
+    margin: auto;
+}
+#nav{
+    background: #86b604;
+}
+#nav::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+#nav a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 1.2rem 1rem;
+}
+#nav a:hover{
+    background-color: rgba(0,0,0,.2);
+}
+.mobile-menu-button{
+    width: 50px;
+    float: right;
+    border: 1px solid rgba(255, 255, 255, .2);
+    padding: 10px;
+    margin: 5px 5px 0 0;
+}
+.mobile-menu-button span{
+    display: block;
+    height: 5px;
+    background-color: white;
+    margin: 0 0 5px 0;
+    border-radius: 3px;
+}
+.mobile-menu-button span:last-child{
+    margin: 0;
+}
+#nav input[type="checkbox"]{
+    display:none;
+}
+.navigation li:first-child{
+    padding: 1.2rem 1rem;
+    color: rgba(255,255,255, .5);
+}
+.navigation li:not(:first-child){
+    display: none;
+}
+input[type="checkbox"]:checked ~.navigation li:not(:first-child){
+    display: block;
 }
